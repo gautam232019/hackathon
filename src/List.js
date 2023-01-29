@@ -5,7 +5,7 @@ import {getJobs } from './helper/apiCalls'
 const List = () => {
    const [jobs,setJob]=useState([])
     useEffect(() => {
-     getJobs({userId:"63d535482e936e736131e5d1"}).then((res)=>{
+     getJobs({userId:"63d536e824302a6ded1f52f7"}).then((res)=>{
 
         setJob(res.data)
         })

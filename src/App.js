@@ -10,6 +10,7 @@ import {Route,Link,BrowserRouter as Router , Switch , Routes} from "react-router
 import {ToastContainer} from "react-toastify"
 import {UserContext} from "./context/UserContext"
 import Popuper from "./Popuper";
+import CustomerList from './customerList'
 
 function App() {
   const [user,setUser] = useState(null);
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/list" element={<List/>}/>
             <Route exact path="*" element={PageNotFound}/>
             <Route exact path = "/logger" element = {<Popuper/>}/>
+            <Route exact path = "/customerList" element = {<CustomerList/>}/>
           </Routes>
         </UserContext.Provider>
       </Router>
