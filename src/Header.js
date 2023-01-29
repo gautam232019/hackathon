@@ -1,5 +1,6 @@
 import React,{useContext,useState} from "react"
 import {
+    Container,
    Collapse,
    Navbar,
    NavbarToggler,
@@ -24,39 +25,39 @@ const Header = () => {
 
 
     return(
-        <Navbar style={{backgroundColor: '#454547'}} light expand="md">
-            <NavbarBrand><Link to="/" className="text-white">GetItDone</Link></NavbarBrand>
-            <NavbarText className="text-white">{
-               context.user?.email ? context.user.email :""
-            }</NavbarText>
-            <NavbarToggler onClick={toggle}/>
-            <Collapse isOpen={isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                  {
-                      context.user ? (
-                      <NavItem>
-                        <NavLink className="text-white" onClick={() => {context.setUser(null)}}>
-                            Logout
-                        </NavLink>
-                    </NavItem>
-                    ) : (
-                    <>
+            <Navbar style={{backgroundColor: '#454547'}} light expand="md">
+                <NavbarBrand><Link to="/" className="text-white">GetItDone</Link></NavbarBrand>
+                <NavbarText className="text-white">{
+                context.user?.email ? context.user.email :""
+                }</NavbarText>
+                <NavbarToggler onClick={toggle}/>
+                <Collapse isOpen={isOpen} navbar>
+                <Nav className="ml-auto" navbar>
+                    {
+                        context.user ? (
                         <NavItem>
-                        <NavLink className="text-white" tag={Link} to="/customersignup">
-                            Signup
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="text-white" tag={Link} to="/merchantsignup" >
-                            Signin
-                        </NavLink>
-                    </NavItem>
-                    </>
-                    )
-                  }
-              </Nav>
-            </Collapse>
-        </Navbar>
+                            <NavLink className="text-white" onClick={() => {context.setUser(null)}}>
+                                Logout
+                            </NavLink>
+                        </NavItem>
+                        ) : (
+                        <>
+                            <NavItem>
+                            <NavLink className="text-white" tag={Link} to="/customersignup">
+                                Signup
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink className="text-white" tag={Link} to="/merchantsignup" >
+                                Signin
+                            </NavLink>
+                        </NavItem>
+                        </>
+                        )
+                    }
+                </Nav>
+                </Collapse>
+            </Navbar>
 
     )
 }

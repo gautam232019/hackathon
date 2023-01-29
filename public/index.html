@@ -25,6 +25,14 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger-cx/bootstrap.js?v=1"></script>
+    <df-messenger
+      df-cx="true"
+      location="asia-south1"
+      chat-title="getitdone"
+      agent-id="fdda20d6-d9ad-4c26-95d6-69ca748b8650"
+      language-code="en"
+    ></df-messenger>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -41,4 +49,5 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+
 </html>
